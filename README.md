@@ -17,32 +17,54 @@ Para o desenvolvimento deste projeto, foram considerados os seguintes requisitos
 - Construção de ao menos um gráfico de Pareto;
 
 ## Leitura + Limpeza & Preparação dos Dados
+
 Inicialmente, foi realizada a organização das tabelas em dois grupos: **dimensão** e **fato**, seguindo boas práticas de modelagem dimensional.
 As tabelas de dimensão foram importadas individualmente, enquanto as tabelas de vendas (fato) foram combinadas em uma única tabela. Essa abordagem permite a atualização automatizada dos dados conforme novos períodos (anos) são adicionados à análise.
 Em seguida, foi realizada a validação dos tipos de dados e a análise de qualidade das colunas.
+
 - Padronização de valores numéricos: as colunas *Unit Price*, *Net Price*, *Unit Cost* e *Exchange Rate* estavam no formato decimal americano (ponto como separador). Foi realizada a substituição para o padrão local antes da conversão para número decimal;
 - Verificação de consistência: não foram identificados erros ou valores ausentes relevantes.
 - Tratamento de valores nulos na coluna *Status*, substituídos por "Active", considerando que representam lojas sem registro de fechamento;
 - Validação de consistência dos campos *Square Meters* e *Close Date*;
 - Verificação de duplicidade em chaves primárias;
 - Análise de outliers utilizando o recurso de perfil de coluna.
+
 ### Modelagem
+
 - Criação da tabela calendário para suporte às análises temporais;
 - Definição dos relacionamentos entre tabelas, estruturando o modelo no padrão estrela (star schema).
 <img width="1101" height="747" alt="image" src="https://github.com/user-attachments/assets/9d578957-9d83-4e5b-a621-9b98688d15b9" />
+
 ## Análise Exploratória (EDA)
+
 A partir da exploração dos dados, algumas informações se fazem notar:
+
 - O segmento online é tratado como uma única StoreKey, diferentemente das demais lojas que estão segmentadas por país, estado e loja;
 - A existência de uma coluna Unit Price e uma coluna Net Price evidencia a possível existência de descontos nas venda;
 - Cada preço vem em dólar, sendo possível a conversão para a moeda local a partir da coluna Exchange Rate;
 
-
-
-
-
-
-
-
-
 ## Recursos e funcionalidades implementadas ao Dashboard
+
+- Segmentação dinâmica de moeda que permite os usuários de diferentes regiões optarem por navegar no dashboard a partir da moeda local ou em dólar:
+
+<img width="373" height="107" alt="image" src="https://github.com/user-attachments/assets/2b488a05-6eef-4be8-82e6-cea260a669b9" />
+
+- Navegação entre as páginas através de botões;
+- Menu de filtros oculto acionável por meio de botão;
+
+<img width="380" height="776" alt="image" src="https://github.com/user-attachments/assets/d4bd952d-0eb4-4cce-8df8-a45e28076ea3" />
+
+- Tooltip personalizada para explicar as variáveis Subcategory e Country:
+
+<img width="865" height="362" alt="image" src="https://github.com/user-attachments/assets/0b47d2df-70ca-433e-93a5-255a14d6da32" />
+
+<img width="660" height="323" alt="image" src="https://github.com/user-attachments/assets/6c8c52c9-fddb-4bc4-9b9a-de521be81e22" />
+
+- Detalhamento da variável Sales a partir do recurso DrillThrough;
+
+<img width="1471" height="408" alt="image" src="https://github.com/user-attachments/assets/196bbd81-31bd-4498-aa3a-52d23d69b466" />
+
+- Diagrama de Pareto para identificar as subcategorias responsáveis por quase 80% das vendas;
+
+
 ## Insights obtidos e análise de negócio
