@@ -1,86 +1,150 @@
-# CaseSalesOverview2026
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3be595b7-e8f7-412b-95f2-15cfdc645eab" width="500"/>
+</p>
 
-Projeto em Power BI desenvolvido a partir de um case técnico, com foco na análise de vendas no varejo. A base de dados, inspirada na estrutura do Adventure Works, foi adaptada para uma análise internacional com um painel voltado ao acesso de filiais nacionais e internacionais.
-Por se tratar do segmento de varejo, a análise foi direcionada ao acompanhamento de métricas-chave como vendas, margem, ticket médio e comportamento de compra dos clientes. Além disso, foram considerados indicadores operacionais, como desempenho de entregas e eficiência logística, permitindo uma visão integrada do negócio e suporte à tomada de decisão estratégica.
+# Retail Hub - Análise de Performance no Varelo
 
-## Premissas e orientações do projeto
+Este projeto foi desenvolvido em Power BI a partir de um case técnico com foco na análise de vendas no varejo. A base de dados, inspirada na estrutura do Adventure Works, foi adaptada para um cenário internacional, permitindo a análise de diferentes regiões e canais de venda.
+O objetivo foi construir um dashboard capaz de apoiar a tomada de decisão por meio da análise integrada de indicadores financeiros, comportamentais e operacionais, como vendas, margem bruta, ticket médio, perfil de clientes e desempenho de entregas.
 
-Para o desenvolvimento deste projeto, foram considerados os seguintes requisitos propostos pelo Case:
+---
+
+## Premissas do projeto
+
+O desenvolvimento seguiu os seguintes requisitos:
 
 - Relatório desenvolvido em inglês;
 - Layout em resolução FHD (1920x1080);
 - Navegação entre páginas por meio de botões;
-- Aplicação de tema personalizado;
 - Exibição de valores em moeda local e em dólar;
 - Implementação de controle de acesso por região (Row-Level Security), em que os times de North America, Europe e Australia visualizam apenas seus dados, enquanto o time global possui acesso completo;
 - Utilização de pelo menos uma tooltip personalizada;
-- Construção de ao menos um gráfico de Pareto;
+- Construção de ao menos um gráfico de Pareto.
 
-## Leitura + Limpeza & Preparação dos Dados
+---
 
-Inicialmente, foi realizada a organização das tabelas em dois grupos: **dimensão** e **fato**, seguindo boas práticas de modelagem dimensional.
-As tabelas de dimensão foram importadas individualmente, enquanto as tabelas de vendas (fato) foram combinadas em uma única tabela. Essa abordagem permite a atualização automatizada dos dados conforme novos períodos (anos) são adicionados à análise.
-Em seguida, foi realizada a validação dos tipos de dados e a análise de qualidade das colunas.
+## Preparação e Modelagem dos Dados
 
-- Padronização de valores numéricos: as colunas *Unit Price*, *Net Price*, *Unit Cost* e *Exchange Rate* estavam no formato decimal americano (ponto como separador). Foi realizada a substituição para o padrão local antes da conversão para número decimal;
-- Verificação de consistência: não foram identificados erros ou valores ausentes relevantes.
-- Tratamento de valores nulos na coluna *Status*, substituídos por "Active", considerando que representam lojas sem registro de fechamento;
-- Validação de consistência dos campos *Square Meters* e *Close Date*;
-- Verificação de duplicidade em chaves primárias;
-- Análise de outliers utilizando o recurso de perfil de coluna.
+Os dados foram estruturados seguindo boas práticas de modelagem dimensional, com separação entre tabelas fato e dimensão. As tabelas de vendas foram consolidadas em uma única fact table, permitindo atualização automatizada conforme novos períodos são adicionados ao modelo.
 
-### Modelagem
+Principais etapas realizadas:
 
-- Criação da tabela calendário para suporte às análises temporais;
-- Definição dos relacionamentos entre tabelas, estruturando o modelo no padrão estrela (star schema).
-<img width="1101" height="747" alt="image" src="https://github.com/user-attachments/assets/9d578957-9d83-4e5b-a621-9b98688d15b9" />
+- Padronização de formatos numéricos (preços, custos e taxa de câmbio);  
+- Validação de consistência dos dados;
+- Tratamento de valores nulos;
+- Verificação de duplicidade em chaves primárias;  
+- Análise de outliers com apoio do perfil de colunas.  
 
-## Análise Exploratória (EDA)
+Também foi criada uma tabela calendário para suporte às análises temporais, e os relacionamentos foram definidos no padrão estrela (*star schema*).
 
-A partir da exploração dos dados, algumas informações se fazem notar:
+<img width="1261" height="727" alt="image" src="https://github.com/user-attachments/assets/93cdef0b-8bd3-43a0-b5be-927133f73aba" />
 
-- O segmento online é tratado como uma única StoreKey, diferentemente das demais lojas que estão segmentadas por país, estado e loja;
-- A existência de uma coluna Unit Price e uma coluna Net Price evidencia a possível existência de descontos nas venda;
-- Cada preço vem em dólar, sendo possível a conversão para a moeda local a partir da coluna Exchange Rate;
+---
 
-## Recursos e funcionalidades implementadas ao Dashboard
+## Análise Exploratória dos Dados (EDA)
 
-- Segmentação dinâmica de moeda que permite os usuários de diferentes regiões optarem por navegar no dashboard a partir da moeda local ou em dólar:
+A análise exploratória permitiu identificar características importantes da base:
 
-<img width="373" height="107" alt="image" src="https://github.com/user-attachments/assets/2b488a05-6eef-4be8-82e6-cea260a669b9" />
+- O canal online é tratado como uma única loja, diferentemente das lojas físicas  
+- A presença das colunas *Unit Price* e *Net Price* indica a aplicação de descontos  
+- Os valores estão originalmente em dólar, com possibilidade de conversão para moeda local via taxa de câmbio  
 
-- Navegação entre as páginas através de botões;
-- Menu de filtros oculto acionável por meio de botão;
+Essas observações orientaram a construção das métricas e das análises do dashboard.
 
-<img width="380" height="776" alt="image" src="https://github.com/user-attachments/assets/d4bd952d-0eb4-4cce-8df8-a45e28076ea3" />
+---
 
-- Tooltip personalizada para explicar as variáveis Subcategory e Country:
+## Funcionalidades do Dashboard
 
-<img width="865" height="362" alt="image" src="https://github.com/user-attachments/assets/0b47d2df-70ca-433e-93a5-255a14d6da32" />
+O dashboard foi desenvolvido com foco em interatividade e usabilidade:
 
-<img width="660" height="323" alt="image" src="https://github.com/user-attachments/assets/6c8c52c9-fddb-4bc4-9b9a-de521be81e22" />
+- Segmentação dinâmica de moeda (Local vs USD);
+- Navegação entre páginas por botões;  
+- Menu de filtros oculto acionado por botão;
 
-- Detalhamento da variável Sales a partir do recurso DrillThrough;
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/49f1236b-003d-4099-8875-f80e86af4ba4" />
 
-<img width="1471" height="408" alt="image" src="https://github.com/user-attachments/assets/196bbd81-31bd-4498-aa3a-52d23d69b466" />
+  
+- Tooltip personalizada para detalhamento de variáveis;
 
-- Diagrama de Pareto para identificar as subcategorias responsáveis por quase 80% das vendas;
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/1edf4bb2-617a-4e41-b3c2-7dea99b9cc8c" />
+  
+- Drill-through para análise detalhada de vendas;
 
-## Insights obtidos e análise de negócio
-- As vendas no mês de abril de 2018 e 2019 sofrem queda significante sendo necessário verificar com a área de negócio se isso realmente ocorre ou se pode ser alguma inconsistência no banco de dados.
-- O faturamento da loja online é responsável por metade do faturamento total do grupo.
-- O gráfico de Vendas versus Margem produz oportunidade de analisar porque em alguns períodos houve aumento do faturamento e queda da margem. Ao utilizar a segmentação não foi identificada relação com a localidade, mas o card de % Desconto sobre as Vendas notou-se um aumento desse percentual nos períodos em que as vendas subiram e a margem não acompanhou.
-- O Diagrama de Pareto que trata do volume de vendas por subcategoria revela que dentra as 32 subcategorias, apenas 10 são responsáveis por quase 80% das vendas e olhando para essas categorias observa-se a predominância de artigos tecnológicos, seja pelo maior valor agregado desses produtos ou realmente o momento que vivemos, onde ter os melhores aparelhos é necessário para conexão.
-- Os consumidores estão quase igualmente divididos em relação ao gênero, porém a faixa etária que mais gera receita é mais longeva (de 51 a 65 anos), destacando uma oportunidade para criar incentivos específicos para esses clientes ou novas iniciativas para conquistar os clientes mais jovens.
-- Na comparação por gênero do percentual de clientes com desconto é possível notar que o volume é ligeiramente maior para os homens, ainda que exista quase igualdade de população por gênero.
-- Os cards de Ticket médio por pedido e Ticket médio por cliente com valores próximos revela que os clientes em média não retornam para comprar novamente, o que é algo a ser investigado pelo time comercial, já que o segmento varejo oferece variabilidade de produtos e um cliente poderia consumir produtos de variadas categorias.
-- O ticket médio por cliente em cada país não é proporcional ao volume de vendas, o que pode revelar que os países que vendem mais em média precisam "trazer" mais clientes para que consigam chegar a essa superioridade. As estratégias de marketing para os países que tem baixo faturamento podem ser direcionadas nesse sentido.
-- A base de dados não possui coluna com data estimada de entrega, então para fins de análise foi considerado o tempo médio de 2 dias. Com base nesse ponto de corte identifica-se historicamente houve uma piora em relação ao número de pedidos entregues com atraso, com uma leve recuperação a partir de 2020.
-- Nos pedidos entregues com atraso também existe predominância de artigos tecnológicos, talvez um gargalo na cadeia de suprimentos tecnológicos? Algo que precisa ser visitado pelo time de logística.
-- O gráfico de volume de entregas por dia da semana também ajuda a identificar dias em que a produtividade é menor. Analisando de forma geral observa-se que existe um escalonamento da quantidade de entregas conforme a semana avança, tendo uma queda significativa na sexta-feira e retomando a força no sábado. Porque isso acontece? É importante verificar como funciona a cadência e processo de entregas.
+<img width="1000" alt="image" src="https://github.com/user-attachments/assets/b2c6dc48-1e35-43d0-a8d3-b133a829c1ee" />
 
-<img width="516" height="372" alt="image" src="https://github.com/user-attachments/assets/3048af5b-a801-487e-bb61-d80400897264" />
+  
+- Gráfico de Pareto para identificação das principais subcategorias;
+- Row-Level Security (RLS) por região utilizando o recurso de Gerenciar Funções.
 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/33997691-07a1-4e9d-afd5-125d0ce20e76" />
+
+---
+
+## Principais Insights
+
+### Performance de Vendas
+- Foram identificadas quedas relevantes nas vendas nos meses de abril de 2018 e 2019, indicando a necessidade de validação com a área de negócio para confirmar se o comportamento é sazonal ou decorrente de inconsistências na base;
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/4125a8de-4cdf-49ec-a0ae-63c4e4761663" />
+
+- O canal online representa aproximadamente metade do faturamento total, evidenciando sua relevância estratégica no resultado consolidado;
+
+<img width="400" height="356" alt="image" src="https://github.com/user-attachments/assets/78291501-2d29-4229-9dd6-3e432370700c" />
+
+  
+- Em determinados períodos, observou-se crescimento de vendas acompanhado de redução de margem, sugerindo impacto direto do aumento de descontos sobre a rentabilidade.
+
+<img width="400" height="422" alt="image" src="https://github.com/user-attachments/assets/70eec955-8a5b-427d-acbb-d65a47b7b0bb" />
+  
+
+### Mix de Produtos
+- A análise de Pareto mostrou que cerca de 10 subcategorias (de um total de 32) concentram quase 80% das vendas;  
+- Entre essas subcategorias, há predominância de produtos tecnológicos, possivelmente associada ao maior valor agregado desses itens ou à sua relevância no consumo atual.
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/2bf9b6de-7362-4c89-ae7a-28bc7eea5f3f" />
+
+
+### Comportamento dos Clientes
+- A base apresenta distribuição equilibrada entre gêneros, sem diferenças significativas de volume;  
+- A maior geração de receita está concentrada em clientes a partir dos 51 anos, indicando oportunidades tanto de aprofundamento nesse público quanto de estratégias para atração de consumidores mais jovens;
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/7d33a42a-c9f1-45dc-b5e4-bac08625e947" />
+
+
+- Observa-se volume ligeiramente maior de concessão de descontos para clientes do gênero masculino;  
+- A proximidade entre o ticket médio por pedido e por cliente sugere baixa recorrência de compras, indicando potencial oportunidade de atuação em retenção e fidelização.
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/35f66228-deed-48b2-b1d3-edb02778664e" />
+
+
+### Performance por Região
+- O ticket médio por cliente não apresenta relação direta com o volume de vendas entre os países;  
+- Em alguns mercados, o crescimento parece estar mais associado ao aumento da base de clientes do que ao valor médio gasto, indicando caminhos distintos para estratégias comerciais e de marketing.
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/49d548e8-07b0-4c56-b317-b9189d6c3a94" />
+
+
+### Operações e Entregas
+- Na ausência de data estimada de entrega, foi adotado um prazo médio de 2 dias como referência para análise de atraso;  
+- Observa-se uma piora histórica no nível de entregas fora do prazo, com leve recuperação a partir de 2020;
+
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/f9335e0a-9b7f-40c5-974c-21c97ba13c24" />
+  
+- Produtos tecnológicos apresentam maior incidência de atraso, o que pode indicar gargalos específicos na cadeia de suprimentos;  
+- O volume de entregas oscila ao longo da semana, sugerindo possíveis ineficiências operacionais ou detalhes de negócio que merecem investigação.
+---
+## Conclusão
+
+Este projeto demonstra a aplicação de modelagem de dados, análise exploratória e construção de dashboards orientados ao negócio.
+
+A análise permitiu identificar oportunidades relacionadas a:
+
+- Estratégia de descontos  
+- Retenção de clientes  
+- Eficiência operacional  
+- Otimização do mix de produtos  
+
+Link do Dashboard: 
 
 
 
