@@ -66,5 +66,14 @@ A partir da exploração dos dados, algumas informações se fazem notar:
 
 - Diagrama de Pareto para identificar as subcategorias responsáveis por quase 80% das vendas;
 
-
 ## Insights obtidos e análise de negócio
+- As vendas no mês de abril de 2018 e 2019 sofrem queda significante sendo necessário verificar com a área de negócio se isso realmente ocorre ou se pode ser alguma inconsistência no banco de dados.
+- O faturamento da loja online é responsável por metade do faturamento total do grupo.
+- O gráfico de Vendas versus Margem produz oportunidade de analisar porque em alguns períodos houve aumento do faturamento e queda da margem. Ao utilizar a segmentação não foi identificada relação com a localidade, mas o card de % Desconto sobre as Vendas notou-se um aumento desse percentual nos períodos em que as vendas subiram e a margem não acompanhou.
+
+
+
+
+
+
+
