@@ -144,7 +144,7 @@ A análise permitiu identificar oportunidades relacionadas a:
 - Eficiência operacional  
 - Otimização do mix de produtos  
 
-Link do Dashboard: 
+Link do Dashboard: https://app.powerbi.com/links/itk4NS8uxE?ctid=659ce2b8-0714-4198-8c38-dc9b60aabb57&pbi_source=linkShare&bookmarkGuid=733f4461-6098-4d2a-84a6-704bbb32b63b
 
 
 
