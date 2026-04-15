@@ -2,7 +2,7 @@
   <img src="https://github.com/user-attachments/assets/3be595b7-e8f7-412b-95f2-15cfdc645eab" width="500"/>
 </p>
 
-# Retail Hub - Análise de Performance no Varelo
+# Retail Hub - Análise de Performance no Varejo
 
 Este projeto foi desenvolvido em Power BI a partir de um case técnico com foco na análise de vendas no varejo. A base de dados, inspirada na estrutura do Adventure Works, foi adaptada para um cenário internacional, permitindo a análise de diferentes regiões e canais de venda.
 O objetivo foi construir um dashboard capaz de apoiar a tomada de decisão por meio da análise integrada de indicadores financeiros, comportamentais e operacionais, como vendas, margem bruta, ticket médio, perfil de clientes e desempenho de entregas.
