@@ -70,6 +70,16 @@ A partir da exploração dos dados, algumas informações se fazem notar:
 - As vendas no mês de abril de 2018 e 2019 sofrem queda significante sendo necessário verificar com a área de negócio se isso realmente ocorre ou se pode ser alguma inconsistência no banco de dados.
 - O faturamento da loja online é responsável por metade do faturamento total do grupo.
 - O gráfico de Vendas versus Margem produz oportunidade de analisar porque em alguns períodos houve aumento do faturamento e queda da margem. Ao utilizar a segmentação não foi identificada relação com a localidade, mas o card de % Desconto sobre as Vendas notou-se um aumento desse percentual nos períodos em que as vendas subiram e a margem não acompanhou.
+- O Diagrama de Pareto que trata do volume de vendas por subcategoria revela que dentra as 32 subcategorias, apenas 10 são responsáveis por quase 80% das vendas e olhando para essas categorias observa-se a predominância de artigos tecnológicos, seja pelo maior valor agregado desses produtos ou realmente o momento que vivemos, onde ter os melhores aparelhos é necessário para conexão.
+- Os consumidores estão quase igualmente divididos em relação ao gênero, porém a faixa etária que mais gera receita é mais longeva (de 51 a 65 anos), destacando uma oportunidade para criar incentivos específicos para esses clientes ou novas iniciativas para conquistar os clientes mais jovens.
+- Na comparação por gênero do percentual de clientes com desconto é possível notar que o volume é ligeiramente maior para os homens, ainda que exista quase igualdade de população por gênero.
+- Os cards de Ticket médio por pedido e Ticket médio por cliente com valores próximos revela que os clientes em média não retornam para comprar novamente, o que é algo a ser investigado pelo time comercial, já que o segmento varejo oferece variabilidade de produtos e um cliente poderia consumir produtos de variadas categorias.
+- O ticket médio por cliente em cada país não é proporcional ao volume de vendas, o que pode revelar que os países que vendem mais em média precisam "trazer" mais clientes para que consigam chegar a essa superioridade. As estratégias de marketing para os países que tem baixo faturamento podem ser direcionadas nesse sentido.
+- A base de dados não possui coluna com data estimada de entrega, então para fins de análise foi considerado o tempo médio de 2 dias. Com base nesse ponto de corte identifica-se historicamente houve uma piora em relação ao número de pedidos entregues com atraso, com uma leve recuperação a partir de 2020.
+- Nos pedidos entregues com atraso também existe predominância de artigos tecnológicos, talvez um gargalo na cadeia de suprimentos tecnológicos? Algo que precisa ser visitado pelo time de logística.
+- O gráfico de volume de entregas por dia da semana também ajuda a identificar dias em que a produtividade é menor. Analisando de forma geral observa-se que existe um escalonamento da quantidade de entregas conforme a semana avança, tendo uma queda significativa na sexta-feira e retomando a força no sábado. Porque isso acontece? É importante verificar como funciona a cadência e processo de entregas.
+
+<img width="516" height="372" alt="image" src="https://github.com/user-attachments/assets/3048af5b-a801-487e-bb61-d80400897264" />
 
 
 
