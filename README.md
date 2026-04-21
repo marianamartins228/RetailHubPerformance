@@ -89,12 +89,12 @@ O dashboard foi desenvolvido com foco em interatividade e usabilidade:
 
 - O canal online representa aproximadamente metade do faturamento total, evidenciando sua relevância estratégica no resultado consolidado;
 
-<img width="400" height="356" alt="image" src="https://github.com/user-attachments/assets/78291501-2d29-4229-9dd6-3e432370700c" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/78291501-2d29-4229-9dd6-3e432370700c" />
 
   
 - Em determinados períodos, observou-se crescimento de vendas acompanhado de redução de margem, sugerindo impacto direto do aumento de descontos sobre a rentabilidade.
 
-<img width="400" height="422" alt="image" src="https://github.com/user-attachments/assets/70eec955-8a5b-427d-acbb-d65a47b7b0bb" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/70eec955-8a5b-427d-acbb-d65a47b7b0bb" />
   
 
 ### Mix de Produtos
