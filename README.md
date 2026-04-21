@@ -8,6 +8,31 @@ Este projeto foi desenvolvido em Power BI a partir de um case técnico com foco 
 O objetivo foi construir um dashboard capaz de apoiar a tomada de decisão por meio da análise integrada de indicadores financeiros, comportamentais e operacionais, como vendas, margem bruta, ticket médio, perfil de clientes e desempenho de entregas.
 
 ---
+## Problema de negócio e objetivo da análise
+
+O dashboard foi estruturado em três pilares principais — performance comercial, comportamento de clientes e eficiência operacional — com o objetivo de fornecer uma visão completa do negócio, desde a geração de receita até a entrega ao cliente final. A análise foi guiada pelas seguintes perguntas de negócio:
+
+### Performance Comercial e Financeira
+
+* Como evoluíram as vendas, os custos e a margem bruta ao longo do tempo?
+* O crescimento de vendas está acompanhado de crescimento de rentabilidade ou há pressão sobre a margem?
+* Quais canais de venda têm maior participação no faturamento total?
+* Quais regiões concentram maior volume de vendas e clientes?
+* Quais subcategorias representam a maior parte do faturamento, seguindo a lógica de Pareto? Há concentração de receita em poucos produtos ou categorias estratégicas?
+* O nível de desconto aplicado varia por região, canal ou perfil de cliente?
+
+### Comportamento e Perfil de Clientes
+
+* Existem diferenças relevantes de comportamento de compra entre países, faixas etárias e gêneros?
+* O ticket médio por cliente e por pedido indica baixa ou alta recorrência?
+
+### Operações e Logística
+
+* Quais categorias apresentam maior incidência de atraso nas entregas?
+* O desempenho logístico é homogêneo ao longo da semana ou existem picos operacionais?
+* Existe relação entre prazo de entrega, atraso e volume de pedidos por categoria?
+
+---
 
 ## Premissas do projeto
 
