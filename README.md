@@ -14,7 +14,7 @@ O dashboard foi estruturado em três pilares principais — performance comercia
 
 Diante disso, o solicitante levantou três grandes questionamentos que nortearam toda a análise:
 1. O crescimento de vendas está sendo rentável?
-Saber que as vendas crescem não é suficiente: era necessário entender se a margem acompanhava esse crescimento ou se práticas como descontos excessivos estavam corroendo a rentabilidade — especialmente em canais e regiões específicas.
+Saber que as vendas crescem não é suficiente: era necessário entender se a margem acompanhava esse crescimento ou se práticas de mercado estavam corroendo a rentabilidade, especialmente em canais e regiões específicas.
 2. Quem são os clientes e como eles compram?
 A empresa carecia de clareza sobre o perfil do seu consumidor: faixa etária, distribuição geográfica e ticket médio. Sem esse entendimento, estratégias de retenção e fidelização ficavam sem embasamento.
 3. As operações de entrega estão funcionando bem?
